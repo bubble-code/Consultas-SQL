@@ -1,24 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import { RouterProvider, Outlet } from 'react-router-dom'
-import { router } from './routes'
+import { Outlet } from 'react-router-dom'
 import { NavBar } from './component'
 
 function App() {
 
   return (
-    <RouterProvider router={router}>
-      <div>
-        <NavBar />
-        <div className="App">
-          <header className="App-header">
-            <h1>App</h1>
-          </header>
+    <div className='h-screen w-screen flex flex-col justify-start align-middle bg-myBG'>
+      <NavBar />
+      <div className=" p-3 container flex flex-wrap items-center justify-between mx-auto relative h-full w-full">
+        <div className='w-full h-full'>
           <Outlet />
         </div>
       </div>
-    </RouterProvider>
+    </div>
   )
 }
 
