@@ -6,12 +6,14 @@ import useSpline from '@splinetool/r3f-spline'
 import Embed from '../component/Embed'
 import smoke from '../assets/smoke.png';
 
+import { SceneContainer } from '../component/SceneContainer';
+
 function Rig() {
     const camera = useThree((state) => state.camera)
     return useFrame(({ clock }) => {
         // camera.rotation.x = clock.getElapsedTime() * 0.01,
         // camera.rotation.y = clock.getElapsedTime() * 0.01,
-        camera.rotation.z = clock.getElapsedTime() * 0.01
+        camera.rotation.z = clock.getElapsedTime() * 0.1
     })
 
 }
@@ -19,7 +21,7 @@ function Rig() {
 const Home = () => {
     const container = useRef();
     const domContent = useRef();
-    const colorMap = useLoader(THREE.CubeTextureLoader, [smoke]);
+    const colorMap = useLoader(THREE.TextureLoader, smoke);
 
     const meshTexture = (colorMap) => {
         const x = Math.random() * 0.2;
@@ -29,17 +31,18 @@ const Home = () => {
             <meshBasicMaterial
                 attach='material'
                 color='white'
-                // map={colorMap} 
+                map={colorMap}
                 transparent={true} />
-            {/* <Rig /> */}
+            <Rig />
         </mesh>)
     }
     return (
         <div className='absolute w-full h-full top-0 left-0 overflow-hidden' ref={container}>
             <Canvas shadows flat linear eventSource={container.current}>
-                <Suspense fallback={null}>
-                    {meshTexture(colorMap)}
-                </Suspense>
+                {/* <Suspense fallback={null}> */}
+                    {/* {meshTexture(colorMap)} */}
+                    <SceneContainer />
+                {/* </Suspense> */}
             </Canvas >
         </div>
     );
