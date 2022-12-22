@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { BufferAttribute, Color } from "three";
 
+
+
 export const FloatingIsland = () => {
   const gltf = useLoader(GLTFLoader, 'floating_island.glb');
 

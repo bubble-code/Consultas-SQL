@@ -1,12 +1,13 @@
 import * as THREE from 'three';
-import { useThree, useFrame, Canvas, useLoader, } from '@react-three/fiber';
-import { Html, Mask, useMask, OrthographicCamera, Clone, Float as FloatImpl } from '@react-three/drei'
+import { useThree, useFrame, Canvas, useLoader } from '@react-three/fiber';
+import { Html, Mask, useMask, OrthographicCamera, Clone, Float as FloatImpl, OrbitControls } from '@react-three/drei'
 import { useEffect, useRef, useState, Suspense } from 'react';
 import useSpline from '@splinetool/r3f-spline'
 import Embed from '../component/Embed'
 import smoke from '../assets/smoke.png';
 
 import { SceneContainer } from '../component/SceneContainer';
+import { FooterCanvas } from '../component/FooterCanvas';
 
 function Rig() {
     const camera = useThree((state) => state.camera)
@@ -39,10 +40,14 @@ const Home = () => {
     return (
         <div className='absolute w-full h-full top-0 left-0 overflow-hidden' ref={container}>
             <Canvas shadows flat linear eventSource={container.current}>
-                {/* <Suspense fallback={null}> */}
+                <Suspense fallback={null}>
+                    <ambientLight intensity={0.5} />
+                    <directionalLight position={[-1, 2, 2]} intensity={4} />
                     {/* {meshTexture(colorMap)} */}
-                    <SceneContainer />
-                {/* </Suspense> */}
+                    {/* <SceneContainer /> */}
+                    <FooterCanvas />
+                    <OrbitControls autoRotate={true} />
+                </Suspense>
             </Canvas >
         </div>
     );
