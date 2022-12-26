@@ -39,14 +39,14 @@ const Home = () => {
     }
     return (
         <div className='absolute w-full h-full top-0 left-0 overflow-hidden' ref={container}>
-            <Canvas shadows flat linear eventSource={container.current}>
+            <Canvas shadows flat linear eventSource={container.current} camera={[1.5, 1.5, 1.5]}>
                 <Suspense fallback={null}>
                     <ambientLight intensity={0.5} />
                     <directionalLight position={[-1, 2, 2]} intensity={4} />
                     {/* {meshTexture(colorMap)} */}
                     {/* <SceneContainer /> */}
-                    <FooterCanvas />
-                    <OrbitControls autoRotate={true} />
+                    <FooterCanvas shape={'sphere'} count={10} />
+                    <OrbitControls  />
                 </Suspense>
             </Canvas >
         </div>
