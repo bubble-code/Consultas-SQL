@@ -23,7 +23,7 @@ export const NavBar = () => {
               <Link to={'/'} id='/' className={`block py-2 pl-3 pr-4 bg-blue-700 rounded md:bg-transparent md:p-0  dark:bg-blue-600 md:dark:bg-transparent ${active === "/" ? "text-white" : "text-gray-400"}`} aria-current="page">Home</Link>
             </li>
             <li>
-              <Link to={'service'} className={`block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${active.includes('service') ? "md:text-white" : "md:text-gray-400"}`}>Services</Link>
+              <Link to={'consultasSQL'} className={`block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${active.includes('consultasSQL') ? "md:text-white" : "md:text-gray-400"}`}>Consultas_Sql</Link>
             </li>
             <li>
               <Link to={'case'} className={`block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${active == "/case" ? "md:text-white" : "md:text-gray-400"}`}>Case Man</Link>

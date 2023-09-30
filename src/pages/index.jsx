@@ -1,3 +1,4 @@
-import Home from './Home'
+import Home from "./Home";
+import Consultas_Sql from "./Consultas_Sql";
 
-export  {Home}
+export { Home, Consultas_Sql };
