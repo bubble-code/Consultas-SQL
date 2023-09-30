@@ -1,3 +1,5 @@
-import { NavBar } from './navbar';
+import { NavBar } from "./navbar";
+import { GridForResultOfQuery } from "./GridForResultOfQuery";
+import { FormQuestionSql } from "./FormQuestionSql";
 
-export { NavBar };
+export { NavBar, GridForResultOfQuery, FormQuestionSql };
